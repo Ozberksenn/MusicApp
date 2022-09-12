@@ -31,7 +31,7 @@ const Signin = () => {
       </View>
       <Input placeholder="Username" />
       <Input placeholder="Password" />
-      <Button btnName="SIGN IN" />
+      <Button onPress={() => navigation.navigate("Main")} btnName="SIGN IN" />
       <View style={{ marginTop: 20, alignItems: "center" }}>
         <Text style={styles.forgotPassword}>Forgot Password ? </Text>
       </View>

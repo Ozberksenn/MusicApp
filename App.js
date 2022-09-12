@@ -14,6 +14,7 @@ import Search from "./src/Main/Search/Search";
 import Profile from "./src/Main/Profile/Profile";
 import ProfileDetail from "./src/Main/Profile/ProfileDetail/ProfileDetail";
 import Theme from "./src/Main/Profile/Theme/Theme";
+import EditProfile from "./src/Main/Profile/EditProfile/EditProfile";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -43,14 +44,12 @@ const Login = () => {
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="Main"
-        screenOptions={{ headerShown: false }}
-      >
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Main" component={Main} />
         <Stack.Screen name="ProfileDetail" component={ProfileDetail} />
         <Stack.Screen name="Theme" component={Theme} />
+        <Stack.Screen name="EditProfile" component={EditProfile} />
       </Stack.Navigator>
     </NavigationContainer>
   );

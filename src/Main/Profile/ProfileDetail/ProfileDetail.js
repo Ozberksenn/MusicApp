@@ -19,7 +19,10 @@ const ProfileDetail = () => {
         <Text style={styles.profilName}>Profil Name</Text>
       </View>
       <Input onPress={() => navigation.navigate("Theme")} name="Theme" />
-      <Input name="Edit Profile" />
+      <Input
+        onPress={() => navigation.navigate("EditProfile")}
+        name="Edit Profile"
+      />
       <Input name="Log Out" />
     </SafeAreaView>
   );
