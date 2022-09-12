@@ -10,7 +10,9 @@ import Signup from "./src/Login/SignUp/Signup";
 
 import Home from "./src/Main/Home/Home";
 import Search from "./src/Main/Search/Search";
+
 import Profile from "./src/Main/Profile/Profile";
+import ProfileDetail from "./src/Main/Profile/ProfileDetail/ProfileDetail";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -46,6 +48,7 @@ const App = () => {
       >
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Main" component={Main} />
+        <Stack.Screen name="ProfileDetail" component={ProfileDetail} />
       </Stack.Navigator>
     </NavigationContainer>
   );
