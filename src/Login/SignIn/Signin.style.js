@@ -25,11 +25,6 @@ export default StyleSheet.create({
     color: "#fff",
     fontSize: 16,
   },
-  signInText: {
-    alignItems: "center",
-    color: "#fff",
-    fontSize: 16,
-  },
   forgotPassword: {
     color: "#7f8184",
     fontSize: 14,
