@@ -3,9 +3,10 @@ import { StyleSheet } from "react-native";
 export default StyleSheet.create({
   tabBarContainer: {
     height: 100,
-    backgroundColor: "#121212",
+    backgroundColor: "#000",
     flexDirection: "row",
     justifyContent: "space-around",
+    opacity: 0.9,
   },
   homeIconText: {
     color: "gray",
