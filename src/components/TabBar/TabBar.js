@@ -15,7 +15,10 @@ const TabBar = () => {
         onPress={() => navigation.navigate("Home") & setFocused(1)}
       >
         <View style={styles.iconView}>
-          <Ionicons style={styles.icon} name="home" />
+          <Ionicons
+            style={[styles.icon, { color: focused === 1 ? "#fff" : "gray" }]}
+            name="home"
+          />
           <Text style={styles.homeIconText}>Home</Text>
         </View>
       </TouchableOpacity>
@@ -23,7 +26,10 @@ const TabBar = () => {
         onPress={() => navigation.navigate("Search") & setFocused(2)}
       >
         <View style={styles.iconView}>
-          <Ionicons style={styles.icon} name="search" />
+          <Ionicons
+            style={[styles.icon, { color: focused === 2 ? "#fff" : "gray" }]}
+            name="search"
+          />
           <Text style={styles.homeIconText}>Search</Text>
         </View>
       </TouchableOpacity>
@@ -31,7 +37,10 @@ const TabBar = () => {
         onPress={() => navigation.navigate("Profile") & setFocused(3)}
       >
         <View style={styles.iconView}>
-          <AntDesign style={styles.icon} name="profile" />
+          <AntDesign
+            style={[styles.icon, { color: focused === 3 ? "#fff" : "gray" }]}
+            name="profile"
+          />
           {/* AntDesign package using. */}
           <Text style={styles.homeIconText}>Profile</Text>
         </View>
