@@ -13,6 +13,7 @@ import Search from "./src/Main/Search/Search";
 
 import Profile from "./src/Main/Profile/Profile";
 import ProfileDetail from "./src/Main/Profile/ProfileDetail/ProfileDetail";
+import Theme from "./src/Main/Profile/Theme/Theme";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -49,6 +50,7 @@ const App = () => {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Main" component={Main} />
         <Stack.Screen name="ProfileDetail" component={ProfileDetail} />
+        <Stack.Screen name="Theme" component={Theme} />
       </Stack.Navigator>
     </NavigationContainer>
   );

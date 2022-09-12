@@ -2,7 +2,9 @@ import { View, Text, SafeAreaView, Image } from "react-native";
 import React from "react";
 import styles from "./ProfileDetail.style";
 import Input from "../../../components/profileDetailInput/profileDetailInput";
+import { useNavigation } from "@react-navigation/native";
 const ProfileDetail = () => {
+  const navigation = useNavigation();
   return (
     <SafeAreaView style={styles.ProfileDetailContainer}>
       <View style={styles.imageContainer}>
@@ -16,7 +18,7 @@ const ProfileDetail = () => {
       <View>
         <Text style={styles.profilName}>Profil Name</Text>
       </View>
-      <Input name="Theme" />
+      <Input onPress={() => navigation.navigate("Theme")} name="Theme" />
       <Input name="Edit Profile" />
       <Input name="Log Out" />
     </SafeAreaView>
