@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, FlatList, ScrollView } from "react-native";
+import { View, Text, SafeAreaView, FlatList } from "react-native";
 import React, { useEffect, useState } from "react";
 import styles from "./Home.style";
 import axios from "axios";
