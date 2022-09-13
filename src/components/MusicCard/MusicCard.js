@@ -1,20 +1,16 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import React from "react";
 import styles from "./MusicCard.style";
-const MusicCard = () => {
+import { Entypo } from "@expo/vector-icons";
+const MusicCard = ({ data }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.albumPhotoContainer}>
-        <Image
-          style={styles.albumPhoto}
-          source={{
-            uri: "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/da/46/db/da46dbff-71cb-e4b3-2b0b-8c8d4b51e16d/825646937097.jpg/1200x1200bf-60.jpg",
-          }}
-        />
-      </View>
       <View style={styles.titleAndName}>
-        <Text>MusicCard</Text>
-        <Text>Name</Text>
+        <Text style={styles.name}>{data?.name}</Text>
+        <Text style={styles.artistName}>{data?.artistName}</Text>
+      </View>
+      <View>
+        <Entypo name="dots-three-vertical" size={24} color="white" />
       </View>
     </View>
   );
