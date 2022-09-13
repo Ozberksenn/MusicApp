@@ -1,11 +1,15 @@
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
+import { useSelector } from "react-redux";
 
 const profileDetailInput = ({ onPress, name }) => {
+  const { activeTheme } = useSelector((state) => state.theme);
   return (
     <TouchableOpacity onPress={onPress} style={styles.container}>
-      <Text style={styles.text}>{name}</Text>
+      <Text style={[styles.text, { color: activeTheme.fontColor }]}>
+        {name}
+      </Text>
       <AntDesign style={styles.icon} name="rightcircleo" />
     </TouchableOpacity>
   );
