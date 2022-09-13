@@ -12,4 +12,8 @@ export default StyleSheet.create({
     fontSize: 25,
     marginTop: 15,
   },
+  icon: {
+    fontSize: 100,
+    color: "#fff",
+  },
 });

@@ -1,8 +1,9 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Provider } from "react-redux";
+import store from "./src/redux/Store";
 import TabBar from "./src/components/TabBar/TabBar";
 
 import SignIn from "./src/Login/SignIn/Signin";
@@ -43,15 +44,17 @@ const Login = () => {
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Login" component={Login} />
-        <Stack.Screen name="Main" component={Main} />
-        <Stack.Screen name="ProfileDetail" component={ProfileDetail} />
-        <Stack.Screen name="Theme" component={Theme} />
-        <Stack.Screen name="EditProfile" component={EditProfile} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Main" component={Main} />
+          <Stack.Screen name="ProfileDetail" component={ProfileDetail} />
+          <Stack.Screen name="Theme" component={Theme} />
+          <Stack.Screen name="EditProfile" component={EditProfile} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 
