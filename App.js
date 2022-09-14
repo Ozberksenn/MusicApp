@@ -10,6 +10,7 @@ import SignIn from "./src/Login/SignIn/Signin";
 import Signup from "./src/Login/SignUp/Signup";
 
 import Home from "./src/Main/Home/Home";
+import FeaturedDetail from "./src/Main/Home/FeaturedDetail/FeaturedDetail";
 import Search from "./src/Main/Search/Search";
 
 import Profile from "./src/Main/Profile/Profile";
@@ -52,6 +53,7 @@ const App = () => {
           <Stack.Screen name="ProfileDetail" component={ProfileDetail} />
           <Stack.Screen name="Theme" component={Theme} />
           <Stack.Screen name="EditProfile" component={EditProfile} />
+          <Stack.Screen name="FeaturedDetail" component={FeaturedDetail} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

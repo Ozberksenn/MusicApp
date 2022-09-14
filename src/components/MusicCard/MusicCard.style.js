@@ -4,15 +4,16 @@ export default StyleSheet.create({
   container: {
     flexDirection: "row",
     margin: 10,
-    justifyContent: "space-between",
     alignItems: "center",
+    justifyContent: "space-between",
   },
-  albumPhoto: {
-    width: 70,
-    height: 70,
-    resizeMode: "stretch",
-    marginLeft: 10,
-    borderRadius: 5,
+  playButtonContainer: {
+    width: 50,
+    height: 50,
+    borderRadius: 50,
+    backgroundColor: "gray",
+    justifyContent: "center",
+    alignItems: "center",
   },
   titleAndName: {
     marginLeft: 10,
@@ -21,7 +22,7 @@ export default StyleSheet.create({
   name: {
     color: "#fff",
     fontSize: 18,
-    marginBottom: 15,
+    marginBottom: 2,
   },
   artistName: {
     color: "gray",
