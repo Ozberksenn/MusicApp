@@ -43,18 +43,24 @@ const Login = () => {
   );
 };
 
+const Content = () => {
+  return (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
+      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen name="Main" component={Main} />
+      <Stack.Screen name="ProfileDetail" component={ProfileDetail} />
+      <Stack.Screen name="Theme" component={Theme} />
+      <Stack.Screen name="EditProfile" component={EditProfile} />
+      <Stack.Screen name="FeaturedDetail" component={FeaturedDetail} />
+    </Stack.Navigator>
+  );
+};
+
 const App = () => {
   return (
     <Provider store={store}>
       <NavigationContainer>
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Main" component={Main} />
-          <Stack.Screen name="ProfileDetail" component={ProfileDetail} />
-          <Stack.Screen name="Theme" component={Theme} />
-          <Stack.Screen name="EditProfile" component={EditProfile} />
-          <Stack.Screen name="FeaturedDetail" component={FeaturedDetail} />
-        </Stack.Navigator>
+        <Content />
       </NavigationContainer>
     </Provider>
   );
