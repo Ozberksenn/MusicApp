@@ -12,6 +12,7 @@ import Button from "../../components/Button/Button";
 import { useNavigation } from "@react-navigation/native";
 import { useSelector, useDispatch } from "react-redux";
 import { addUser } from "../../redux/userSlice";
+// import { Signup } from "../../../config/firebase";
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,11 @@ const Signup = () => {
       })
     );
   };
+
+  // useEffect(() => {
+  //   sign("joe@gmail.com", "password123");
+  // }, []);
+
   return (
     <SafeAreaView style={styles.signUpContainer}>
       <View style={styles.logoContainer}>
