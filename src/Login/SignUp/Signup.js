@@ -12,7 +12,6 @@ import Button from "../../components/Button/Button";
 import { useNavigation } from "@react-navigation/native";
 import { useSelector, useDispatch } from "react-redux";
 import { addUser } from "../../redux/userSlice";
-// import { Signup } from "../../../config/firebase";
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -27,7 +26,7 @@ const Signup = () => {
     //redux statemize input bilgilerini yazdırıyoruz.
     dispatch(
       addUser({
-        email: mail,
+        mail: mail,
         userName: userName,
         password: password,
         passwordAgain: passwordAgain,
