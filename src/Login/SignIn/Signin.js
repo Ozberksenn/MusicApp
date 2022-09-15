@@ -10,6 +10,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { firebase } from "../../../config";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import styles from "./Signin.style";
 import Input from "../../components/Input/Input";
 import Button from "../../components/Button/Button";
@@ -18,10 +19,10 @@ import { setUser } from "../../redux/userSlice";
 const Signin = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
-  const [mail, setMail] = useState();
-  const [password, setPassword] = useState();
+  const [mail, setMail] = useState(null);
+  const [password, setPassword] = useState(null);
 
-  const handleSignInButton = () => {
+  const handleSignInButton = async () => {
     if (mail && password) {
       dispatch(
         setUser({
@@ -33,10 +34,17 @@ const Signin = () => {
       firebase
         .auth()
         .signInWithEmailAndPassword(mail, password)
-        .then((res) => console.log("welcom"))
-        .catch(() =>
-          Alert.alert("Wrong", "The information you entered is incorrect.")
-        );
+        .then(() =>
+          AsyncStorage.setItem(
+            "userKey",
+            JSON.stringify({
+              mail: mail,
+              password: password,
+              passwordAgain: password,
+            })
+          )
+        )
+        .catch((error) => console.log(error));
     } else {
       Alert.alert(
         "Wrong",

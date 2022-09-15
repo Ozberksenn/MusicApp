@@ -6,6 +6,7 @@ import { AntDesign } from "@expo/vector-icons";
 import GenresCard from "../../components/GenresCard/GenresCard";
 const Search = () => {
   const [genres, setGenres] = useState();
+  const [focused, setFocused] = useState();
 
   useEffect(() => {
     genresData();
@@ -26,16 +27,21 @@ const Search = () => {
       <View style={styles.searchContainer}>
         <AntDesign style={{ left: 5 }} name="search1" size={24} color="black" />
         <TextInput
+          onFocus={(value) => setFocused(value)}
           style={styles.searchInput}
           placeholderTextColor="#000"
           placeholder="What do you want to listen ? "
         />
       </View>
-      <FlatList
-        numColumns={2}
-        data={genres}
-        renderItem={({ item }) => <GenresCard data={item} />}
-      />
+      {focused ? (
+        <Text>Hello World</Text>
+      ) : (
+        <FlatList
+          numColumns={2}
+          data={genres}
+          renderItem={({ item }) => <GenresCard data={item} />}
+        />
+      )}
     </SafeAreaView>
   );
 };

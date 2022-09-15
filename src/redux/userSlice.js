@@ -8,7 +8,6 @@ export const userSlice = createSlice({
   },
   reducers: {
     addUser: (state, action) => {
-      AsyncStorage.setItem("userKey", JSON.stringify(action.payload));
       firebase
         .auth()
         .createUserWithEmailAndPassword(
@@ -18,7 +17,6 @@ export const userSlice = createSlice({
       state.userInfo = action.payload;
     },
     setUser: (state, action) => {
-      AsyncStorage.setItem("userKey", JSON.stringify(action.payload));
       state.userInfo = action.payload;
     },
     updateUser: (state, action) => {
