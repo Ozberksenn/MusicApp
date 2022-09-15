@@ -9,9 +9,14 @@ import React from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import styles from "./Profile.style";
 import { useNavigation } from "@react-navigation/native";
-
+import { firebase } from "../../../config";
 const Profile = () => {
   const navigation = useNavigation();
+
+  const handleCheck = () => {
+    const user = firebase.auth().currentUser;
+    console.log(user);
+  };
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -26,9 +31,9 @@ const Profile = () => {
           <AntDesign name="rightcircleo" style={styles.icon} />
         </TouchableOpacity>
       </View>
-      <View>
+      <TouchableOpacity onPress={handleCheck}>
         <Text style={styles.likedTitle}>Liked Songs</Text>
-      </View>
+      </TouchableOpacity>
     </SafeAreaView>
   );
 };

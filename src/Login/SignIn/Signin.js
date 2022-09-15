@@ -7,7 +7,7 @@ import {
   Alert,
 } from "react-native";
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
 import { firebase } from "../../../config";
 import styles from "./Signin.style";
@@ -22,21 +22,27 @@ const Signin = () => {
   const [password, setPassword] = useState();
 
   const handleSignInButton = () => {
-    dispatch(
-      setUser({
-        mail: mail,
-        userName: userName,
-        password: password,
-        passwordAgain: passwordAgain,
-      })
-    );
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(mail, password)
-      .then(() => navigation.navigate("Main"))
-      .catch((e) =>
-        Alert.alert("Wrong", "The information you entered is incorrect.")
+    if (mail && password) {
+      dispatch(
+        setUser({
+          mail: mail,
+          password: password,
+          passwordAgain: password,
+        })
       );
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(mail, password)
+        .then(() => navigation.navigate("Main"))
+        .catch(() =>
+          Alert.alert("Wrong", "The information you entered is incorrect.")
+        );
+    } else {
+      Alert.alert(
+        "Wrong",
+        "mail and password information cannot be left blank."
+      );
+    }
   };
   return (
     <SafeAreaView style={styles.container}>

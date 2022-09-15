@@ -2,11 +2,20 @@ import { View, Text, SafeAreaView, Image } from "react-native";
 import React from "react";
 import styles from "./ProfileDetail.style";
 import Input from "../../../components/profileDetailInput/profileDetailInput";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useNavigation } from "@react-navigation/native";
+import { logOut } from "../../../redux/userSlice";
+import { firebase } from "../../../../config";
+
 const ProfileDetail = () => {
   const { activeTheme } = useSelector((state) => state.theme);
+  const dispatch = useDispatch;
   const navigation = useNavigation();
+
+  const handleLogOut = () => {
+    dispatch(logOut({}));
+  };
+
   return (
     <SafeAreaView
       style={[
@@ -32,7 +41,7 @@ const ProfileDetail = () => {
         onPress={() => navigation.navigate("EditProfile")}
         name="Edit Profile"
       />
-      <Input name="Log Out" />
+      <Input onPress={handleLogOut} name="Log Out" />
     </SafeAreaView>
   );
 };

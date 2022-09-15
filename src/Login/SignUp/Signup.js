@@ -33,11 +33,6 @@ const Signup = () => {
       })
     );
   };
-
-  // useEffect(() => {
-  //   sign("joe@gmail.com", "password123");
-  // }, []);
-
   return (
     <SafeAreaView style={styles.signUpContainer}>
       <View style={styles.logoContainer}>
