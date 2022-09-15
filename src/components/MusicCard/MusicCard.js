@@ -1,9 +1,25 @@
 import { View, Text, TouchableOpacity } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./MusicCard.style";
 import { Entypo } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
-const MusicCard = ({ data }) => {
+import { useSelector, useDispatch } from "react-redux";
+import { addSong, removeSong } from "../../redux/songsSlice";
+
+const MusicCard = ({ data, isAdded }) => {
+  const dispatch = useDispatch();
+  const [like, setLike] = useState(isAdded ? true : false);
+
+  const hadnleClick = () => {
+    if (!like) {
+      dispatch(addSong({ data }));
+      setLike(!like);
+    } else {
+      dispatch(removeSong({ data }));
+      setLike(!like);
+    }
+  };
+
   return (
     <View style={styles.container}>
       <View style={{ flexDirection: "row" }}>
@@ -20,14 +36,18 @@ const MusicCard = ({ data }) => {
           <Text style={styles.artistName}>{data?.artistName}</Text>
         </View>
       </View>
-      <View>
-        <Entypo
-          style={{ right: 15 }}
-          name="heart-outlined"
-          size={24}
-          color="white"
-        />
-      </View>
+      <TouchableOpacity onPress={hadnleClick}>
+        {like ? (
+          <Entypo style={{ right: 15 }} name="heart" size={24} color="green" />
+        ) : (
+          <Entypo
+            style={{ right: 15 }}
+            name="heart-outlined"
+            size={24}
+            color="green"
+          />
+        )}
+      </TouchableOpacity>
     </View>
   );
 };

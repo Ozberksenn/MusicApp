@@ -15,9 +15,16 @@ export default StyleSheet.create({
     fontSize: 18,
   },
   likedTitle: {
+    marginVertical: 20,
+    textAlign: "center",
     fontSize: 22,
     marginTop: 20,
     marginLeft: 10,
-    color: "#679215",
+    color: "#fff",
+  },
+  line: {
+    borderWidth: 1,
+    borderColor: "#fff",
+    marginTop: 15,
   },
 });
