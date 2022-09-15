@@ -8,14 +8,14 @@ import { updateUser } from "../../../redux/userSlice";
 const EditProfile = () => {
   const dispatch = useDispatch();
   const { userInfo } = useSelector((state) => state.user);
-  const [mail, setMail] = useState(null);
+  const [userName, setUserName] = useState(null);
   const [password, setPassword] = useState(null);
   const [passwordAgain, setPasswordAgain] = useState(null);
   const handleSaveButton = () => {
-    if (mail && password && passwordAgain) {
+    if (userName && password && passwordAgain) {
       dispatch(
         updateUser({
-          mail: mail,
+          userName: userName,
           password: password,
           passwordAgain: passwordAgain,
         })
@@ -38,9 +38,9 @@ const EditProfile = () => {
         </Text>
       </View>
       <Input
-        defaultValue={userInfo?.mail}
-        onChangeText={(value) => setMail(value)}
-        placeholder="Mail"
+        defaultValue={userInfo?.userName}
+        onChangeText={(value) => setUserName(value)}
+        placeholder="User Name"
       />
       <Input
         defaultValue={userInfo?.password}

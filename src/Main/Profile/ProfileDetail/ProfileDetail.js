@@ -9,7 +9,7 @@ import { firebase } from "../../../../config";
 
 const ProfileDetail = () => {
   const { activeTheme } = useSelector((state) => state.theme);
-  const dispatch = useDispatch;
+  const dispatch = useDispatch();
   const navigation = useNavigation();
 
   const handleLogOut = () => {

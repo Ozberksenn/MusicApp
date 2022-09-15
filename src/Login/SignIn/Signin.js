@@ -33,7 +33,7 @@ const Signin = () => {
       firebase
         .auth()
         .signInWithEmailAndPassword(mail, password)
-        .then(() => navigation.navigate("Main"))
+        .then((res) => console.log("welcom"))
         .catch(() =>
           Alert.alert("Wrong", "The information you entered is incorrect.")
         );

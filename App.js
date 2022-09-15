@@ -12,7 +12,9 @@ import Signup from "./src/Login/SignUp/Signup";
 
 import Home from "./src/Main/Home/Home";
 import FeaturedDetail from "./src/Main/Home/FeaturedDetail/FeaturedDetail";
+
 import Search from "./src/Main/Search/Search";
+import SearchDetail from "./src/Main/Search/SearchDetail/SearchDetail";
 
 import Profile from "./src/Main/Profile/Profile";
 import ProfileDetail from "./src/Main/Profile/ProfileDetail/ProfileDetail";
@@ -51,11 +53,11 @@ const Content = () => {
     const response = await AsyncStorage.getItem("userKey");
     const local = response ? JSON.parse(response) : null;
     setLocalData(local);
-    console.log("control", local);
+    console.log("Local Control : ", local);
   };
   useEffect(() => {
     getLocal();
-  }, []);
+  }, [userInfo]);
 
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -70,6 +72,7 @@ const Content = () => {
           <Stack.Screen name="Theme" component={Theme} />
           <Stack.Screen name="EditProfile" component={EditProfile} />
           <Stack.Screen name="FeaturedDetail" component={FeaturedDetail} />
+          <Stack.Screen name="SearchDetail" component={SearchDetail} />
         </>
       )}
     </Stack.Navigator>

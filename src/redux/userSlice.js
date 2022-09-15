@@ -15,7 +15,6 @@ export const userSlice = createSlice({
           action.payload.mail,
           action.payload.password
         );
-
       state.userInfo = action.payload;
     },
     setUser: (state, action) => {
