@@ -3,9 +3,6 @@ assignment-5-Ozberksenn created by GitHub Classroom
 
 <h1>Spotify Clone</h1>
 
-
-![spotify_Screen_one](https://user-images.githubusercontent.com/96706849/190711693-3cf6b75a-e16c-47e5-a96a-21feec80c72d.png)
-
  <ul>
     <p>Used Packages:</p>
     <li>Expo : https://expo.dev</li>
@@ -13,8 +10,12 @@ assignment-5-Ozberksenn created by GitHub Classroom
     <li>Async Storage package : https://github.com/typicode/json-server#getting-started </li>
     <li>Napster API : https://developer.prod.napster.com/developer </li>
     <li>React Navigation : https://reactnavigation.org/docs/getting-started/</li>
+    <li>Icon Package : Expo Vector Icons , https://docs.expo.dev/guides/icons/</li>
   </ul>
   <p>Redux Toolkit will be used for global state.</p>
+
+
+![spotify_Screen_one](https://user-images.githubusercontent.com/96706849/190711693-3cf6b75a-e16c-47e5-a96a-21feec80c72d.png)
 
 ![spotify_Screen_two](https://user-images.githubusercontent.com/96706849/190711635-5ccece3e-8791-43ee-8bfc-94e6432e963c.png)
 
