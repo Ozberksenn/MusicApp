@@ -23,3 +23,5 @@ assignment-5-Ozberksenn created by GitHub Classroom
 
 ![spoti](https://user-images.githubusercontent.com/96706849/190711575-b7cbb95f-cd22-4df3-a434-9f3e5aeea328.gif)
 
+
+Firebase Authentication : ![image](https://user-images.githubusercontent.com/96706849/190834589-6f3e91fa-75ca-45bb-baf8-8a4711b31be2.png)
